@@ -1,37 +1,69 @@
-// Smooth scroll from Explore button
-function scrollToSection() {
-    document.getElementById("about").scrollIntoView({
-        behavior: "smooth"
+const title = document.querySelector("[data-type-text]");
+
+const themeToggle = document.querySelector("[data-theme-toggle]");
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+function setTheme(mode) {
+    const isDark = mode === "dark";
+    document.body.classList.toggle("dark-mode", isDark);
+
+    if (themeToggle) {
+        themeToggle.innerHTML = isDark
+            ? '<i class="fa-solid fa-moon"></i>'
+            : '<i class="fa-solid fa-sun"></i>';
+        themeToggle.setAttribute("aria-label", isDark ? "Switch to white mode" : "Switch to dark mode");
+    }
+}
+
+setTheme(savedTheme || "light");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        const nextTheme = document.body.classList.contains("dark-mode") ? "light" : "dark";
+        localStorage.setItem("portfolio-theme", nextTheme);
+        setTheme(nextTheme);
     });
 }
 
-// Hire Me button
-function showMessage() {
-    alert("Thanks for visiting my portfolio! 😊");
-}
+if (title) {
+    const text = title.dataset.typeText;
+    let index = 0;
 
-// Fade animation on scroll
-const sections = document.querySelectorAll("section");
+    function typeText() {
+        title.textContent = text.slice(0, index);
+        index++;
 
-window.addEventListener("scroll", () => {
-    sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-
-        if (top < screen - 100) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
+        if (index <= text.length) {
+            setTimeout(typeText, 95);
         }
+    }
+
+    typeText();
+}
+
+const revealItems = document.querySelectorAll("[data-reveal]");
+
+if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.18 });
+
+    revealItems.forEach(item => observer.observe(item));
+} else {
+    revealItems.forEach(item => item.classList.add("show"));
+}
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", event => {
+        event.preventDefault();
+        alert("Thanks! Your message has been sent.");
+        contactForm.reset();
     });
-});
-
-// Initial style
-sections.forEach(section => {
-    section.style.opacity = "0";
-    section.style.transform = "translateY(50px)";
-    section.style.transition = "0.8s ease";
-});
-
-// Current year in footer (optional)
-const footer = document.querySelector("footer p");
-footer.innerHTML = `© ${new Date().getFullYear()} Nabil Mahmud | All Rights Reserved`;
+}

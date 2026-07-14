@@ -3,78 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tabassum Portfolio</title>
+<title>Tabassum Sultana | Home</title>
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-
 <header>
 <nav>
-<h2>Tabassum</h2>
+<a class="logo" href="index.html">Tabassum.</a>
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+<li><a class="nav-link" href="about.html"><i class="fa-solid fa-user"></i>About</a></li>
+<li><a class="nav-link" href="skills.html"><i class="fa-solid fa-code"></i>Skills</a></li>
+<li><a class="nav-link" href="projects.html"><i class="fa-solid fa-briefcase"></i>Projects</a></li>
+<li><a class="nav-link" href="contact.html"><i class="fa-solid fa-paper-plane"></i>Contact</a></li>
 </ul>
+<button class="theme-toggle" type="button" aria-label="Switch color mode" data-theme-toggle>
+<i class="fa-solid fa-moon"></i>
+</button>
 </nav>
 </header>
 
-<section id="home" class="hero">
-<div class="text">
-<h1>Hello, I'm <span>Tabassum Sultana</span></h1>
-<p> Web Developer</p>
-<button onclick="scrollToSection()">Explore</button>
+<main>
+<section class="hero">
+<div class="content" data-reveal>
+<span class="eyebrow"><i class="fa-solid fa-star"></i>Welcome to my portfolio</span>
+<h1>Tabassum Sultana</h1>
+<h2 data-type-text="Personal Portfolio"></h2>
+<p>A clean place to show my profile, skills, projects, contact details and creative web work.</p>
+<div class="actions">
+<a class="btn" href="about.html"><i class="fa-solid fa-user"></i>About Me</a>
+<a class="btn secondary" href="projects.html"><i class="fa-solid fa-briefcase"></i>View Projects</a>
+</div>
+<div class="social-row">
+<a class="icon-btn" href="https://www.facebook.com/share/1QXWCEkzje/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a class="icon-btn" href="https://github.com/tabassum-sultana/portfolio" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+<a class="icon-btn" href="https://www.linkedin.com/in/tabassum-sultana-5222b7308?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+<a class="icon-btn" href="https://www.instagram.com/tabassumsultana320?igsh=a2ZwYTFmMGZiYm00" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+</div>
 </div>
 
-<div class="image">
-<img src="images/profile.jpg" alt="Profile">
-</div>
-</section>
-
-<section id="about">
-<h2>About Me</h2>
-<p>I create responsive and modern websites using HTML, CSS and JavaScript.</p>
-</section>
-
-<section id="skills">
-<h2>Skills</h2>
-<div class="cards">
-<div>HTML</div>
-<div>CSS</div>
-<div>JavaScript</div>
-<div>Git</div>
-<div>GitHub</div>
+<div class="portrait-card" data-reveal>
+<img src="assets/heroimage.png" alt="Tabassum Sultana">
 </div>
 </section>
 
-<section id="projects">
-<h2>Projects</h2>
-
-<div class="project">
-<h3>Portfolio Website</h3>
-<p>Modern personal portfolio website.</p>
+<section class="portfolio-needs">
+<div class="section-heading" data-reveal>
+<span class="eyebrow"><i class="fa-solid fa-layer-group"></i>Portfolio Sections</span>
+<h2>Everything a strong portfolio needs</h2>
+<p>Quick access to the most important parts of my personal website.</p>
 </div>
 
-<div class="project">
-<h3>Weather App</h3>
-<p>Weather app using API.</p>
+<div class="portfolio-grid">
+<a class="portfolio-tile" href="about.html" data-reveal>
+<i class="fa-solid fa-user-check"></i>
+<h3>About Me</h3>
+<p>Short personal introduction, goals and what I care about while building websites.</p>
+</a>
+<a class="portfolio-tile" href="skills.html" data-reveal>
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+<h3>Unique Skills</h3>
+<p>Technical skills, design thinking, responsive layout and problem solving ability.</p>
+</a>
+<a class="portfolio-tile" href="projects.html" data-reveal>
+<i class="fa-solid fa-diagram-project"></i>
+<h3>Projects</h3>
+<p>Featured practice projects that show design sense, layout and JavaScript logic.</p>
+</a>
+<a class="portfolio-tile" href="contact.html" data-reveal>
+<i class="fa-solid fa-envelope-open-text"></i>
+<h3>Contact</h3>
+<p>A simple way to connect for ideas, collaboration or frontend website work.</p>
+</a>
 </div>
-
 </section>
-
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: your@email.com</p>
-<button onclick="showMessage()">Hire Me</button>
-</section>
+</main>
 
 <footer>
-<p>© 2026 Tabassum Sulatna</p>
+<div class="footer-content">
+<div class="footer-brand">
+<h3>Tabassum.</h3>
+<p>Personal portfolio with profile, skills, projects and contact details.</p>
+</div>
+<div class="footer-links">
+<a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+<a href="about.html"><i class="fa-solid fa-user"></i>About</a>
+<a href="skills.html"><i class="fa-solid fa-code"></i>Skills</a>
+<a href="projects.html"><i class="fa-solid fa-briefcase"></i>Projects</a>
+<a href="contact.html"><i class="fa-solid fa-paper-plane"></i>Contact</a>
+</div>
+<div class="footer-social">
+<a class="icon-btn" href="https://www.facebook.com/share/1QXWCEkzje/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a class="icon-btn" href="https://github.com/tabassum-sultana/portfolio" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+<a class="icon-btn" href="https://www.linkedin.com/in/tabassum-sultana-5222b7308?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+<a class="icon-btn" href="https://www.instagram.com/tabassumsultana320?igsh=a2ZwYTFmMGZiYm00" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Tabassum Sultana. All Rights Reserved.</p>
+</div>
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
